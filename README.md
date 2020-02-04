@@ -1,4 +1,4 @@
-This is my simple render that I made based on a wonderful series by @haqreu from habrahabr.com. Therefore, I do not own the model (see obj directory).
+This is my simple render that I made based on a wonderful series by @haqreu from https://habr.com. Therefore, I do not own the model (see obj directory).
 
 
 General project information:
