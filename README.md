@@ -27,7 +27,7 @@ Directories information:
 Final - the final product.
 
 Obj - the model that I used. As I said before, I do now own this model, so if you want to use it not within this course you first have to obtain a permission of the 
-owner(which you can find following the links I attached below).
+owner(who you can find following the links I attached below).
 
 Old - how I developed this small project following the articles in case you decide to try them as well.
 
