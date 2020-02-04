@@ -1,0 +1,1292 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041EDC3 в функции triangle() в файле C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp на строке 120. Попытка прочесть данные по адресу 0x0000060A. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055C5F4 (32-bit), Flags: Cmdre0, Thread: 0x4830 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041EDC3 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: triangle() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp (120):
+
+    118:         swap(v1, v2);
+    119: 
+=>  120:     if (inrange(v2.x, v2.y) && zbuffer[v2.x][v2.y] < v2.z) {
+    121:         zbuffer[v2.x][v2.y] = v2.z;
+    122:         drawPixel(v2.x, v2.y, color);
+
+# 1 0x0041E5AE in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: build() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp (86):
+
+     84:             //triangle(screen, RGB(255 * intensity, 255 * intensity, 255 * intensity));
+     85:             //triangle(screen, RGB(rand() % 255,    rand() % 255,    rand() % 255   ));
+=>   86:             triangle(screen, TX_GREEN);
+     87:     }
+     88: }
+
+# 2 0x0043CD3B in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: main() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/main.cpp (15):
+
+     13: 	const char* input_obj = "obj\\african_head.obj";
+     14: 	g.model = new Model(input_obj);
+=>   15: 	g.build();
+     16: 	return 0;
+     17: }
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  1 2020 11:28:57, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 01 2020 11:29:02
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041EDC3 в функции triangle() в файле C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp на строке 120. Попытка прочесть данные по адресу 0x0000060A. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055C5F4 (32-bit), Flags: Cmdre0, Thread: 0x4830 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041EDC3 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: triangle() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp (120):
+
+    118:         swap(v1, v2);
+    119: 
+=>  120:     if (inrange(v2.x, v2.y) && zbuffer[v2.x][v2.y] < v2.z) {
+    121:         zbuffer[v2.x][v2.y] = v2.z;
+    122:         drawPixel(v2.x, v2.y, color);
+
+# 1 0x0041E5AE in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: build() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp (86):
+
+     84:             //triangle(screen, RGB(255 * intensity, 255 * intensity, 255 * intensity));
+     85:             //triangle(screen, RGB(rand() % 255,    rand() % 255,    rand() % 255   ));
+=>   86:             triangle(screen, TX_GREEN);
+     87:     }
+     88: }
+
+# 2 0x0043CD3B in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: main() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/main.cpp (15):
+
+     13: 	const char* input_obj = "obj\\african_head.obj";
+     14: 	g.model = new Model(input_obj);
+=>   15: 	g.build();
+     16: 	return 0;
+     17: }
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  1 2020 11:28:57, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 01 2020 11:29:02
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0047973F в функции normalize() в файле C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp на строке 198. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055D5D4 (32-bit), Flags: Cmdre0, Thread: 0x3A04 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0047973F in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: normalize() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp (198):
+
+    196: void Graphics::drawPixel(int x, int y, COLORREF color) {
+    197:     txSetPixel(x, y, color);
+=>  198: }
+    199: 
+
+# 1 0x0041E112 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: build() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp (42):
+
+     40: 
+     41:         Vec3f normal = ((world[2] - world[0]) ^ (world[1] - world[0]));
+=>   42:         normal.normalize();
+     43:         float intensity = normal * movedLight;
+     44:         //if (intensity > 0)
+
+# 2 0x0043D54D in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: main() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/main.cpp (23):
+
+     21: 	g.model = new Model(input_obj);
+     22: 	
+=>   23: 	g.build();
+     24: 	return 0;
+     25: }
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  1 2020 11:43:03, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 01 2020 11:43:15
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0047973F в функции normalize() в файле C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp на строке 198. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055D5D4 (32-bit), Flags: Cmdre0, Thread: 0x3A04 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0047973F in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: normalize() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp (198):
+
+    196: void Graphics::drawPixel(int x, int y, COLORREF color) {
+    197:     txSetPixel(x, y, color);
+=>  198: }
+    199: 
+
+# 1 0x0041E112 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: build() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp (42):
+
+     40: 
+     41:         Vec3f normal = ((world[2] - world[0]) ^ (world[1] - world[0]));
+=>   42:         normal.normalize();
+     43:         float intensity = normal * movedLight;
+     44:         //if (intensity > 0)
+
+# 2 0x0043D54D in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: main() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/main.cpp (23):
+
+     21: 	g.model = new Model(input_obj);
+     22: 	
+=>   23: 	g.build();
+     24: 	return 0;
+     25: }
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  1 2020 11:43:03, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 01 2020 11:43:15
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0047968F в функции normalize() в файле C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp на строке 198. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055D5D4 (32-bit), Flags: Cmdre0, Thread: 0x4C8 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0047968F in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: normalize() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp (198):
+
+    196: void Graphics::drawPixel(int x, int y, COLORREF color) {
+    197:     txSetPixel(x, y, color);
+=>  198: }
+    199: 
+
+# 1 0x0041E102 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: build() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp (42):
+
+     40: 
+     41:         Vec3f normal = ((world[2] - world[0]) ^ (world[1] - world[0]));
+=>   42:         normal.normalize();
+     43:         float intensity = normal * movedLight;
+     44:         //if (intensity > 0)
+
+# 2 0x0043D4A1 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: main() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/main.cpp (23):
+
+     21: 	g.model = new Model(input_obj);
+     22: 	
+=>   23: 	g.build();
+     24: 	return 0;
+     25: }
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  1 2020 11:47:25, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 01 2020 11:47:31
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0047968F в функции normalize() в файле C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp на строке 198. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055D5D4 (32-bit), Flags: Cmdre0, Thread: 0x4C8 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0047968F in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: normalize() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp (198):
+
+    196: void Graphics::drawPixel(int x, int y, COLORREF color) {
+    197:     txSetPixel(x, y, color);
+=>  198: }
+    199: 
+
+# 1 0x0041E102 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: build() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/graphics.cpp (42):
+
+     40: 
+     41:         Vec3f normal = ((world[2] - world[0]) ^ (world[1] - world[0]));
+=>   42:         normal.normalize();
+     43:         float intensity = normal * movedLight;
+     44:         //if (intensity > 0)
+
+# 2 0x0043D4A1 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: main() at C:/Users/ivanp/Рабочий стол/Programming/3D/Рендеринг/update 2/main.cpp (23):
+
+     21: 	g.model = new Model(input_obj);
+     22: 	
+=>   23: 	g.build();
+     24: 	return 0;
+     25: }
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  1 2020 11:47:25, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 01 2020 11:47:31
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F484 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x00560550 (32-bit), Flags: Cmdre0, Thread: 0x1454 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F484 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:23:03, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:23:13
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F484 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x00560550 (32-bit), Flags: Cmdre0, Thread: 0x1454 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F484 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:23:03, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:23:13
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F484 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x00560550 (32-bit), Flags: Cmdre0, Thread: 0x3FD8 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F484 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:24:51, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:25:00
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F484 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x00560550 (32-bit), Flags: Cmdre0, Thread: 0x3FD8 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F484 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:24:51, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:25:00
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x4A74 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:28:31, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:28:40
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x4A74 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:28:31, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:28:40
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x3BBC (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:48:53, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:49:02
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x3BBC (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:48:53, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:49:02
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x406C (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:49:46, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:49:57
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x406C (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:49:46, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:49:57
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x4FD0 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:51:26, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:51:35
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x4FD0 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:51:26, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:51:35
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x277C (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:53:31, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:53:41
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x277C (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:53:31, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:53:41
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x2054 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:54:03, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:54:12
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x2054 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:54:03, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:54:12
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x7C4 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:58:05, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:58:14
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x7C4 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:58:05, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 14:58:14
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x1818 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:58:05, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 15:00:04
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x1818 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 14:58:05, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 15:00:03
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x2968 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 15:12:41, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 15:12:50
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x2968 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 15:12:41, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 15:12:50
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x3650 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 15:12:41, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 15:12:58
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F464 в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x0055F550 (32-bit), Flags: Cmdre0, Thread: 0x3650 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F464 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x770E1F3E in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 2 0x757085D5 in C:\Windows\System32\msvcrt.dll: free()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 15:12:41, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 15:12:58
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F5EC в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x00560550 (32-bit), Flags: Cmdre0, Thread: 0xDD4 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F5EC in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x00412933 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::build()
+# 2 0x004D607F in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 15:13:52, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 15:14:01
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Деление на ноль при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_DIVIDE_BY_ZERO (0xC000008E) при выполнении кода по адресу 0x0040F5EC в функции Graphics::triangleFixedColor(). Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300], Instance: 0x00560550 (32-bit), Flags: Cmdre0, Thread: 0xDD4 (Main), GetLastError(): 2 (Не удается найти указанный файл). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040F5EC in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::triangleFixedColor()
+# 1 0x00412933 in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: Graphics::build()
+# 2 0x004D607F in C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 164, Date: 2020-01-30 05:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	TXLib.h
+Compiled:	Feb  3 2020 15:13:52, GNU g++ 5.1.0, std=199711L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 03 2020 15:14:01
+
+Run file:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2\main.exe
+Directory:	C:\Users\ivanp\Рабочий стол\Programming\3D\Рендеринг\update 2
+
+--------------------------------------------------

@@ -1,0 +1,1 @@
+g++ -ggdb -g3 -pg -O0 -c *.cpp

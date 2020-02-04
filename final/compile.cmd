@@ -1,0 +1,1 @@
+g++ -w -Ofast -c *.cpp
