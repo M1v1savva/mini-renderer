@@ -64,15 +64,15 @@ void Graphics::build(build_type type) {
         switch (type) {
             case HOLES:                 triangleFixedColor(screen, RGB(0, 255, 0));
                                         break;
-            case WHITE:                 if (intensity > 0) triangleFixedColor(screen, RGB(255 * intensity, 255 * intensity, 255 * intensity));
+            case BINARY:                 if (intensity > 0) triangleFixedColor(screen, RGB(255 * intensity, 255 * intensity, 255 * intensity));
                                         break;
-            case WHITE_GURU:            triangleWhiteGuru(screen, vertIntensity);
+            case BINARY_GOURAUD:            triangleWhiteGuru(screen, vertIntensity);
                                         break;
-            case WHITE_PHONG:           triangleWhitePhong(screen, norm);
+            case BINARY_PHONG:           triangleWhitePhong(screen, norm);
                                         break;
             case TEXTURE:               if (intensity > 0) triangleTex(screen, tex, intensity);
                                         break;
-            case TEXTURE_GURU:          triangleTexGuru(screen, tex, vertIntensity);
+            case TEXTURE_GOURAUD:          triangleTexGuru(screen, tex, vertIntensity);
                                         break;
             case TEXTURE_PHONG:         triangleTexPhong(screen, tex, norm);
                                         break;
