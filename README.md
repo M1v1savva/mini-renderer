@@ -36,6 +36,7 @@ Pictures - what I managed to achieve.
 Links:
 
 The article I used in Russian: https://habr.com/ru/post/248153/
+
 The article (and much more interesting stuff) in English: https://github.com/ssloy/tinyrenderer/wiki
 
                  
