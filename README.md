@@ -1,42 +1,41 @@
-This is my simple render that I made based on a wonderful series by @haqreu from https://habr.com. Therefore, I do not own the model (see obj directory).
+## Minimalist renderer from scratch
 
+This is my implementation of the [tinyrenderer](https://github.com/ssloy/tinyrenderer/wiki) by [ssloy](https://github.com/ssloy).
+Tinyrenderer is a series of articles about 3D graphics and basic concepts behind them. The explanations are neat and results and aethetically pleasing, so I definitely recommend cheking it out. 
 
-General project information:
+I wrote this when I was in middle school so the code is very similar to original tinyrenderer as I was just starting to learn advanced C++ concepts and relied a lot on the implementation in the articles. 
 
-The final product can generate 	7 types of pictures 800x800:
+Also, I obviously don't own the model used for rendering.
 
-1. HOLES           -fill all the parts of the model with green(useful for debug when you need to check whether there are any holes in your picture).
-2. BINARY          -black and white picture without any shading.
-3. TEXTURE         -full model without any shading.
-4. BINARY_GAURAUD  -black and white picture & Gauraud shading.
-5. BINARY_PHONG    -black and white picture & Phong shading.
-6. TEXTURE_GAURAUD -full model & Gauraud shading.
-7. TEXTURE_PHONG   -full model & Phong shading.
+[Same articles written in Russian](https://habr.com/ru/post/248153/)
 
-Before start of the rendering process you can set the position of your eye, the center of the model in world scene, the vector that will be oriented vertically(you can set (0, 1, 0) by default) 
-in the picture and the light vector. You might be wondering what is this vertical vector for. In fact, when you look at something with your eyes you can alwasy turn 
-your head a littly bit and the picture will change even though the position of your eyes and the object stayed. So we need the vertical vector to resolve this.
+---
 
-Moreover, the render is not model-dependent, so you can try something else as well, though I am not sure if it works fine with none-square texture files.
+## Results
 
-Note, that I used .bmp format for all the pictures and texture files in the final version and .tga in old versions.
+Web model:<br/>
+![0 web](https://user-images.githubusercontent.com/18361541/176958784-07da72cc-737c-4960-be3f-dfb4e49cbf9d.png)
 
+Added light:<br/>
+![1 light](https://user-images.githubusercontent.com/18361541/176958798-4a24d642-ffee-4e48-8b89-c6368c61c815.png)
 
-Directories information:
+Added z-buffer:<br/>
+![2 z-buffer](https://user-images.githubusercontent.com/18361541/176958806-d2a16dc5-02a9-40ae-9072-73fe21588aed.png)
 
-Final - the final product.
+Added matrix transformations: camera, perspective distortion, etc<br/>
+![4 binary](https://user-images.githubusercontent.com/18361541/176958814-1841f857-49b4-4ead-8e17-d15ffd7915e4.png)
 
-Obj - the model that I used. As I said before, I do now own this model, so if you want to use it not within this course you first have to obtain a permission of the 
-owner(who you can find following the links I attached below).
+Added textures:<br/>
+![5 texture](https://user-images.githubusercontent.com/18361541/176958819-2474d11b-7545-4838-b39e-d006e284c82a.png)
 
-Old - how I developed this small project following the articles in case you decide to try them as well.
+Gouraud shading, no textures:<br/>
+![6 gouraud_binary](https://user-images.githubusercontent.com/18361541/176958830-60c67b16-5ab7-420c-9ff3-581afb0df870.png)
 
-Pictures - what I managed to achieve.
+Phong shading, no textures:<br/>
+![7 phong_binary](https://user-images.githubusercontent.com/18361541/176958840-88824e83-50db-422e-99c9-c3ed93a92aae.png)
 
-Links:
+Gouraud shading, with textures:<br/>
+![8 gouraud_texture](https://user-images.githubusercontent.com/18361541/176958850-28f0d030-ef70-47a9-8d0f-6315c3b9210d.png)
 
-The article I used in Russian: https://habr.com/ru/post/248153/
-
-The article (and much more interesting stuff) in English: https://github.com/ssloy/tinyrenderer/wiki
-
-                 
+Phong shading, with textures:<br/>
+![9 phong_texture](https://user-images.githubusercontent.com/18361541/176958865-d585bbd2-1f4e-4106-94e3-b78d9608b0b7.png)
