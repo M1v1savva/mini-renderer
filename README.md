@@ -1,9 +1,7 @@
 ## Minimalist renderer from scratch
 
 This is me following [tinyrenderer](https://github.com/ssloy/tinyrenderer/wiki) course by [ssloy](https://github.com/ssloy).
-Tinyrenderer is a series of articles about 3D graphics and basic geometry behind it. For a project built pretty much from scratch you can generate some cool results. 
-
-Also, I obviously don't own the model used for rendering.
+Tinyrenderer is a series of articles about 3D graphics and basic geometry behind it. For a project built from scratch the output is pretty cool. 
 
 ---
 
