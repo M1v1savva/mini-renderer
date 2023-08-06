@@ -3,11 +3,7 @@
 This is my implementation of the [tinyrenderer](https://github.com/ssloy/tinyrenderer/wiki) by [ssloy](https://github.com/ssloy).
 Tinyrenderer is a series of articles about 3D graphics and basic concepts behind them. The explanations are neat and results and aethetically pleasing, so I definitely recommend cheking it out. 
 
-I wrote this when I was in middle school so the code is very similar to original tinyrenderer as I was just starting to learn advanced C++ concepts and relied a lot on the implementation in the articles. 
-
 Also, I obviously don't own the model used for rendering.
-
-[Same articles written in Russian](https://habr.com/ru/post/248153/)
 
 ---
 
