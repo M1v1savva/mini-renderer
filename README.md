@@ -1,6 +1,6 @@
 ## Minimalist renderer from scratch
 
-This is my implementation of the [tinyrenderer](https://github.com/ssloy/tinyrenderer/wiki) by [ssloy](https://github.com/ssloy).
+This is me following [tinyrenderer](https://github.com/ssloy/tinyrenderer/wiki) course by [ssloy](https://github.com/ssloy).
 Tinyrenderer is a series of articles about 3D graphics and basic concepts behind them. The explanations are neat and results and aethetically pleasing, so I definitely recommend cheking it out. 
 
 Also, I obviously don't own the model used for rendering.
