@@ -20,8 +20,6 @@ FetchContent_MakeAvailable(googletest)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
 
-find_package(OpenSSL REQUIRED)
-
 # --- Application ---
 
 # - main -
@@ -39,7 +37,10 @@ add_executable(
   model-overview
   src/model.cpp
 )
-target_include_directories(mini-renderer PRIVATE ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(model-overview PRIVATE 
+    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}
+)
 
 # --- Tests ---
 enable_testing()
@@ -63,12 +64,15 @@ test_math(test_vec tests/linal/test_vec.cpp)
 test_math(test_matrix tests/linal/test_matrix.cpp)
 
 # model
-add_executable(test_model tests/test_model.cpp src/model.cpp)
+add_executable(test_model tests/test_model.cpp)
 target_include_directories(test_model PRIVATE 
     ${CMAKE_SOURCE_DIR}/include
     ${CMAKE_SOURCE_DIR}/tests
     ${CMAKE_SOURCE_DIR}
 )
-target_link_libraries(test_model PRIVATE GTest::gtest GTest::gtest_main OpenSSL::SSL OpenSSL::Crypto)
+target_link_libraries(test_model PRIVATE GTest::gtest GTest::gtest_main)
 add_test(NAME test_model COMMAND test_model)
 set_tests_properties(test_model PROPERTIES WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/tests)
+target_compile_options(test_model PRIVATE -Wno-deprecated-declarations)
+
+# 
