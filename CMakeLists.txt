@@ -29,7 +29,10 @@ add_executable(
   src/graphics.cpp
 	src/model.cpp
 )
-target_include_directories(mini-renderer PRIVATE ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(mini-renderer PRIVATE 
+  ${CMAKE_SOURCE_DIR}/include
+  ${CMAKE_SOURCE_DIR}
+)
 target_link_libraries(mini-renderer PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets)
 
 # - model overview - 
@@ -45,7 +48,7 @@ target_include_directories(model-overview PRIVATE
 # --- Tests ---
 enable_testing()
 
-function(test_math name sources)
+function(add_my_tests name sources)
     add_executable(${name} ${sources})
     target_include_directories(${name} PRIVATE 
         ${CMAKE_SOURCE_DIR}/include
@@ -58,21 +61,13 @@ function(test_math name sources)
 endfunction()
 
 # vec
-test_math(test_vec tests/linal/test_vec.cpp)
+add_my_tests(test_vec tests/linal/test_vec.cpp)
 
 # matrix
-test_math(test_matrix tests/linal/test_matrix.cpp)
+add_my_tests(test_matrix tests/linal/test_matrix.cpp)
 
 # model
-add_executable(test_model tests/test_model.cpp)
-target_include_directories(test_model PRIVATE 
-    ${CMAKE_SOURCE_DIR}/include
-    ${CMAKE_SOURCE_DIR}/tests
-    ${CMAKE_SOURCE_DIR}
-)
-target_link_libraries(test_model PRIVATE GTest::gtest GTest::gtest_main)
-add_test(NAME test_model COMMAND test_model)
-set_tests_properties(test_model PROPERTIES WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/tests)
-target_compile_options(test_model PRIVATE -Wno-deprecated-declarations)
+add_my_tests(test_model tests/test_model.cpp)
 
-# 
+# graphics
+add_my_tests(test_graphics tests/test_graphics.cpp)

@@ -1,7 +1,5 @@
 #include <stdexcept>
 
-namespace mini_renderer {
-
 template<typename T>
 Vec2<T>& Vec2<T>::normalize() {
     T n = norm();
@@ -13,7 +11,7 @@ Vec2<T>& Vec2<T>::normalize() {
 }
 
 template<typename T>
-inline Vec3<T> Vec3<T>::operator ^ (const Vec3<T> &v) const { 
+Vec3<T> Vec3<T>::operator ^ (const Vec3<T> &v) const { 
 	return Vec3<T>(y * v.z - z * v.y, z * v.x - x * v.z, x * v.y - y * v.x); 
 }
 
@@ -42,5 +40,3 @@ Vec3<int>::Vec3<float>(const Vec3<float> &v)
     y(v.y + 0.5), 
     z(v.z + 0.5) 
     {}
-
-}

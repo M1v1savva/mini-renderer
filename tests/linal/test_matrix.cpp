@@ -1,11 +1,9 @@
-#include <mini-renderer/linal/matrix.h>
+#include <linal/matrix.h>
 #include <tests/randf.h>
 
 #include <gtest/gtest.h>
 #include <cstdlib>
 #include <cmath>
-
-using mini_renderer::Matrix;
 
 const float eps = 1e-5;
 

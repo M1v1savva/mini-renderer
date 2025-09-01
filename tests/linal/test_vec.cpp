@@ -1,13 +1,8 @@
-#include <mini-renderer/linal/vec.h>
+#include <linal/vec.h>
 #include <tests/randf.h>
 
 #include <gtest/gtest.h>
 #include <cmath>
-
-using mini_renderer::Vec2f;
-using mini_renderer::Vec2i;
-using mini_renderer::Vec3f;
-using mini_renderer::Vec3i;
 
 TEST(Vec2Test, BasicOps) {
     float x0 = randf(), y0 = randf(), x1 = randf(), y1 = randf();

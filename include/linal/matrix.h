@@ -1,9 +1,6 @@
-#ifndef __MATRIX_H__
-#define __MATRIX_H__
+#pragma once
 
 #include <vector>
-
-namespace mini_renderer {
 
 template<typename T, size_t rows, size_t cols> 
 struct Matrix {
@@ -13,8 +10,8 @@ struct Matrix {
 	Matrix();
 	~Matrix() {}
 	
-	inline std::vector<T>& operator [] (size_t i) { return m[i]; }
-	inline const std::vector<T>& operator [] (size_t i) const { return m[i]; }
+	std::vector<T>& operator [] (size_t i) { return m[i]; }
+	const std::vector<T>& operator [] (size_t i) const { return m[i]; }
 
 	Matrix<T, rows, cols> operator + (const Matrix<T, rows, cols> &v);
 	Matrix<T, rows, cols> operator - (const Matrix<T, rows, cols> &v);
@@ -23,8 +20,4 @@ struct Matrix {
 	Matrix<T, rows, cols2> operator * (const Matrix<T, cols, cols2> &v) const;
 };
 
-}
-
 #include "matrix.tpp"
-
-#endif //__MATRIX_H__

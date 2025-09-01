@@ -1,11 +1,8 @@
-#ifndef __MODEL_H__
-#define __MODEL_H__
+#pragma once
 
-#include <mini-renderer/linal/vec.h>
+#include <linal/vec.h>
 
 #include <vector>
-
-namespace mini_renderer {
 
 class Model {
 public:
@@ -32,7 +29,3 @@ private:
 	std::vector<Vec3f> vert_tex;
 	std::vector<Vec3i> face_tex;
 };
-
-}
-
-#endif //__MODEL_H__

@@ -1,9 +1,6 @@
-#ifndef __VEC_H__
-#define __VEC_H__
+#pragma once
 
 #include <cmath>
-
-namespace mini_renderer {
 
 template<typename T> struct Vec2 {
 	union { struct { T x, y; }; T val[2]; };
@@ -17,10 +14,10 @@ template<typename T> struct Vec2 {
 	Vec2(T _val[]) : x(_val[0]), y(_val[1]) {} 
 	Vec2(T _x, T _y) : x(_x), y(_y) {}
 
-	inline Vec2<T> operator + (const Vec2<T> &v) const { return Vec2<T>(x + v.x, y + v.y); }
-	inline Vec2<T> operator - (const Vec2<T> &v) const { return Vec2<T>(x - v.x, y - v.y); }
-	inline Vec2<T> operator * (const T k)        const { return Vec2<T>(x * k,   y * k); }
-	inline T       operator * (const Vec2<T> &v) const { return x * v.x + y * v.y; }
+	Vec2<T> operator + (const Vec2<T> &v) const { return Vec2<T>(x + v.x, y + v.y); }
+	Vec2<T> operator - (const Vec2<T> &v) const { return Vec2<T>(x - v.x, y - v.y); }
+	Vec2<T> operator * (const T k)        const { return Vec2<T>(x * k,   y * k); }
+	T       operator * (const Vec2<T> &v) const { return x * v.x + y * v.y; }
 	
 	T& operator [] (const size_t i) { return val[i]; }
 	const T& operator [] (const size_t i) const { return val[i]; }
@@ -42,12 +39,12 @@ template<typename T> struct Vec3 {
 	Vec3(T _val[]) : x(_val[0]), y(_val[1]), z(_val[2]) {} 
 	Vec3(T _x, T _y, T _z) : x(_x), y(_y), z(_z) {}
 
-	inline Vec3<T> operator + (const Vec3<T> &v) const { return Vec3<T>(x + v.x, y + v.y, z + v.z); }
-	inline Vec3<T> operator - (const Vec3<T> &v) const { return Vec3<T>(x - v.x, y - v.y, z - v.z); }
-	inline Vec3<T> operator * (const T k)        const { return Vec3<T>(x * k,   y * k,   z * k); }
-	inline T       operator * (const Vec3<T> &v) const { return x * v.x + y * v.y + z * v.z; }
+	Vec3<T> operator + (const Vec3<T> &v) const { return Vec3<T>(x + v.x, y + v.y, z + v.z); }
+	Vec3<T> operator - (const Vec3<T> &v) const { return Vec3<T>(x - v.x, y - v.y, z - v.z); }
+	Vec3<T> operator * (const T k)        const { return Vec3<T>(x * k,   y * k,   z * k); }
+	T       operator * (const Vec3<T> &v) const { return x * v.x + y * v.y + z * v.z; }
 	// Left-hand multiplication
-	inline Vec3<T> operator ^ (const Vec3<T> &v) const; 
+	Vec3<T> operator ^ (const Vec3<T> &v) const; 
 	
 	T& operator [] (const size_t i) { return val[i]; }
 	const T& operator [] (const size_t i) const { return val[i]; }
@@ -61,8 +58,4 @@ typedef Vec2<int>   Vec2i;
 typedef Vec3<float> Vec3f;
 typedef Vec3<int>   Vec3i;
 
-}
-
 #include "vec.tpp"
-
-#endif //__VEC_H__

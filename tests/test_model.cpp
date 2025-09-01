@@ -1,14 +1,10 @@
-#include <mini-renderer/model/model.h>
-#include <mini-renderer/model/rgb.h>
-#include <mini-renderer/model/image.h>
+#include <model/model.h>
+#include <model/rgb.h>
+#include <model/image.h>
 
 #include <gtest/gtest.h>
 #include <fstream>
 #include <vector>
-
-using mini_renderer::RGB;
-using mini_renderer::Model;
-using mini_renderer::Image;
 
 TEST(RGBTest, ConstructorAndMultiply) {
     RGB c1;                  

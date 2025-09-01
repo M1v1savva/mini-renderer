@@ -1,5 +1,3 @@
-namespace mini_renderer {
-
 template<typename T, size_t rows, size_t cols>
 Matrix<T, rows, cols>::Matrix() {
     // generate identity matrix by default
@@ -38,6 +36,4 @@ Matrix<T, rows, cols2> Matrix<T, rows, cols>::operator * (const Matrix<T, cols, 
         }
     }
     return result;
-}
-
 }

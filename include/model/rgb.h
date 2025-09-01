@@ -1,7 +1,4 @@
-#ifndef __COLORS_H__
-#define __COLORS_H__
-
-namespace mini_renderer {
+#pragma once
 
 struct RGB {
 	unsigned char r, g, b;
@@ -21,7 +18,3 @@ struct RGB {
 		);
 	}
 };	
-
-}
-
-#endif //__COLORS_H__

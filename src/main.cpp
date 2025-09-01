@@ -1,28 +1,39 @@
-#include "vec.h"
-#include "model.h"
-#include "matrix.h"
-#include "graphics.h"
+#include <linal/vec.h>
+#include <models/model.h>
+#include <models/image.h>
+#include <graphics/graphics.h>
 
 #include <iostream>
 
-using namespace std;
-
 int main() {
-	char* input_obj = "obj\\african_head.obj";
-	Vec3f eye(1, 1, 3);
-	Vec3f center(0, 0, 0);
-	Vec3f vertical(0, 1, 0);
-	Vec3f light(0, 0, -1);
+	const char* INPUT_OBJ = "obj/african_head.obj";
+	const char* INPUT_TEX = "obj/african_head_diffuse.bmp";
+	const char* OUTPUT_BMP = "phone_texture.bmp";
+	const size_t WIDTH = 800, HEIGHT = 800, DEPTH = 255;
 
-	Graphics g(800, 800, 255);
-	g.eye = eye;
-	g.center = center;
-	g.vertical = vertical;
-	g.light = light;
-	g.outputFilename = "phong_texture.bmp";
-	g.textureFilename = "obj\\african_head_diffuse.bmp";
-	g.model = new Model(input_obj);
+	const Vec3f eye(1, 1, 3);
+	const Vec3f center(0, 0, 0);
+	const Vec3f vertical(0, 1, 0);
+	const Vec3f light(0, 0, -1);
+
+	Geometrics* transform = new Geometrics(eye, center, vertical, light);
+	ICanvas* canvas = new ICanvas(WIDTH, HEIGH, DEPTH);
+	Model* model = new Model(INPUT_OBJ);
+	Texture* texture = new Texture(INPUT_TEX);
+
+	Graphics g(
+		model,
+		texture,
+		canvas,
+		transform,
+		OUTPUT_BMP
+	);
 
 	g.build(TEXTURE_PHONG);
+
+	delete transform;
+	delete canvas;
+	delete model;
+	delete texture;
 	return 0;
 }
