@@ -51,7 +51,7 @@ void BinRasterizer::rasterize() {
         for (int x = a.x + 1; x < b.x; x++) {
             float gamma = (float)(x - a.x) / (b.x - a.x);
             Vec3i c = a + Vec3f(b - a) * gamma;
-            canvas-> update(x, v0.y + dy, c.z, color);
+            canvas-> update(x, a.y, c.z, color);
         }
     }
 }

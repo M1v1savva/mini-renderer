@@ -68,7 +68,7 @@ void BinGuRasterizer::rasterize() {
             Vec3i c = a + Vec3f(b - a) * gamma;
             float intensityC = intensityA + (intensityB - intensityA) * gamma;
             if (intensityC > 0)
-                canvas-> update(x, v0.y + dy, c.z, RGB(intensityC));
+                canvas-> update(x, a.y, c.z, RGB(intensityC));
         }
     }
 }

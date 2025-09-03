@@ -39,8 +39,9 @@ void Graphics::build(RASTERIZER_MODE rasterizer_mode) {
 
             screen[j] = transform-> pass(world[j]);
         }
-        Vec3f normal = ((world[2] - world[0]) ^ (world[1] - world[0]));
+        Vec3f normal = ((world[1] - world[0]) ^ (world[2] - world[0]));
         normal.normalize();
+        normal = normal * (-1);
         float intensity = normal * (transform-> get_light());
         
         Vec3f light = transform-> get_light();

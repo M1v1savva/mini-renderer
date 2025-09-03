@@ -83,7 +83,7 @@ void BinPhRasterizer::rasterize() {
             intensity = normC * light;
             
             if (intensity > 0)
-                canvas-> update(x, v0.y + dy, c.z, RGB(intensity));
+                canvas-> update(x, a.y, c.z, RGB(intensity));
         }
     }
 }
