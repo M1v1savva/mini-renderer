@@ -10,6 +10,21 @@ Key topics: **rasterization, geometry, linear algebra**.
 
 ---
 
+## 🚀 Quick Start with CMake
+
+**Requirements**: CMake v3.16+, C++ v17+
+
+```
+git clone https://github.com/M1v1savva/mini-renderer.git
+cd mini-renderer
+mkdir build && cd build
+cmake ..
+cd ..
+cmake --build build
+./mini-renderer --mode bing --path out.bmp
+```
+**See out.bmp**
+
 ## ✨ Results 
 
 Given two files:  
@@ -44,7 +59,7 @@ This project is my hands-on take on [ssloy's Tinyrenderer](https://github.com/ss
 
 While TinyRenderer prioritizes minimal code, **mini-renderer** uses a more object-oriented design, making it easier to embed in a GUI or extend for other uses. 
 
-## Examples
+## 🚦 Examples
 
 <table>
 <tr>
@@ -62,25 +77,6 @@ While TinyRenderer prioritizes minimal code, **mini-renderer** uses a more objec
   </td>
 </tr>
 </table>
-
-## 🛠️ Build & Run
-
-### CMake 
-```
-git clone https://github.com/M1v1savva/mini-renderer.git
-cd mini-renderer
-mkdir build && cd build
-cmake ..
-cd ..
-cmake --build build
-./mini-renderer --mode <RAST_MODE> --path <OUTPUT_IMAGE>
-```
-<!-- ### Docker
-```
-git clone https://github.com/M1v1savva/mini-renderer.git
-docker build -t mini-renderer .
-docker run -rm mini-renderer --mode <RAST_MODE> --path <OUTPUT_IMAGE>
-``` -->
 
 ## ▶️ Run
 
