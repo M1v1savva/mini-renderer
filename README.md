@@ -49,12 +49,16 @@ While TinyRenderer prioritizes minimal code, **mini-renderer** uses a more objec
 <table>
 <tr>
   <td style="text-align: center;">
-    <img src="https://user-images.githubusercontent.com/18361541/176958840-88824e83-50db-422e-99c9-c3ed93a92aae.png" width="400"/><br>
+    <img src="results/gou1.bmp" width="400"/><br>
     Gouraud shading (no texture)
   </td>
   <td style="text-align: center;">
-    <img src="https://user-images.githubusercontent.com/18361541/176958850-28f0d030-ef70-47a9-8d0f-6315c3b9210d.png" width="400"/><br>
-    Phong shading (with texture)
+    <img src="results/phong1.bmp" width="400"/><br>
+    Phong shading (no texture)
+  </td>
+  <td style="text-align: center;">
+    <img src="results/gou2.bmp" width="400"/><br>
+    Gouraud shading (with texture)
   </td>
 </tr>
 </table>
