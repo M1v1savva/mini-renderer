@@ -12,9 +12,9 @@ struct Image {
     
     Image() {}
     ~Image() {
-        // for (size_t i = 0; i < height; ++i)
-        //     delete[] pixelmap[i];
-        // delete[] pixelmap;
+        for (size_t i = 0; i < height; ++i)
+            delete[] pixelmap[i];
+        delete[] pixelmap;
     }
 
     void load_bmp(const char* filename) {
@@ -28,10 +28,10 @@ struct Image {
 
         int row_padded = (width * 3 + 3) & (~3);
         std::vector<unsigned char> row(row_padded);
+        
         pixelmap = new RGB*[height];
         for (size_t i = 0; i < height; ++i)
             pixelmap[i] = new RGB[width];
-        
 
         for (size_t i = 0; i < height; ++i) {
             f.read(reinterpret_cast<char*>(row.data()), row_padded);

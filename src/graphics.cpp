@@ -54,7 +54,16 @@ void Graphics::output(const char* filename) {
     Image dr;
     dr.width = canvas-> get_width();
     dr.height = canvas-> get_height();
-    dr.pixelmap = canvas-> get_pixelmap();
+    RGB** old_canvas = canvas-> get_pixelmap();
+    RGB** rotated_canvas = new RGB*[dr.height];
+    for (size_t i = 0; i < dr.height; ++i)
+        rotated_canvas[i] = new RGB[dr.width];
+
+    for (size_t i = 0; i < dr.height; ++i)
+        for (size_t j = 0; j < dr.width; ++j)
+            rotated_canvas[i][j] = old_canvas[j][i];
+    
+    dr.pixelmap = rotated_canvas;
     dr.save_bmp(filename);
     std::cout << "Saved to " << filename << std::endl;
 }

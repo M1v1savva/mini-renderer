@@ -12,6 +12,6 @@ struct Texture : Image {
         v.x *= width;
         v.y *= height;
         Vec3i p(v);
-        return pixelmap[p.x][height - 1 - p.y]; // textureMap.h - 1 - t.y
+        return pixelmap[p.y][p.x]; // textureMap.h - 1 - t.y
     }
 };
