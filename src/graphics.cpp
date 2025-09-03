@@ -13,7 +13,7 @@ void Graphics::build(RASTERIZER_MODE rasterizer_mode) {
 
     for (int i = 0; i < model-> nfaces(); i++) {
         if (i % 5 == 0)
-            std::cout << "\rProgress: " << int(ceil((i * 100.f) / model-> nfaces())) << "%." << std::flush;
+            std::cout << "\rProgress: " << int(ceil((i * 100.f) / model-> nfaces())) << "%. " << std::flush;
         Vec3i face = model-> get_face(i);
         Vec3i screen[3];
         Vec3f world[3];

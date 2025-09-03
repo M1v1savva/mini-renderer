@@ -18,6 +18,13 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
+FetchContent_Declare(
+    nlohmann_json
+    GIT_REPOSITORY https://github.com/nlohmann/json.git
+    GIT_TAG v3.11.2
+)
+FetchContent_MakeAvailable(nlohmann_json)
+
 # --- Application ---
 
 # - main -
@@ -41,6 +48,7 @@ target_include_directories(mini-renderer PRIVATE
   ${CMAKE_SOURCE_DIR}/include
   ${CMAKE_SOURCE_DIR}
 )
+target_link_libraries(mini-renderer PRIVATE nlohmann_json::nlohmann_json)
 
 # - model overview - 
 add_executable(

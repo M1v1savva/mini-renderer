@@ -2,8 +2,10 @@
 #include <model/model.h>
 #include <model/image.h>
 #include <graphics/graphics.h>
+#include <nlohmann/json.hpp>
 
 #include <iostream>
+#include <fstream>
 #include <cstring>
 
 RASTERIZER_MODE parse_mode(const char* mode_str) {
@@ -27,7 +29,7 @@ RASTERIZER_MODE parse_mode(const char* mode_str) {
 	}
 }
 
-int main(int argc, char** argv) {
+void usage(int argc, char** argv) {
 	if (argc != 5 || strcmp(argv[1], "--mode") != 0 || strcmp(argv[3], "--path") != 0) {
         std::cerr << "Usage: " << argv[0] << " --mode <RASTERIZER_MODE> --path <OUTPUT_PATH>\n";
 		std::cerr << "RASTERIZER_MODES:\n";
@@ -38,23 +40,66 @@ int main(int argc, char** argv) {
 		std::cerr << "  tex  - color, lighting \n";
 		std::cerr << "  texg - color, Gouraud shading\n";
 		std::cerr << "  texp - color, Phong shading\n";
-		return 1;
+		exit(1);
     }
+}
+
+int main(int argc, char** argv) {
+	usage(argc, argv);
 
 	const RASTERIZER_MODE rast_mode = parse_mode(argv[2]);
 	const char* OUTPUT_BMP = argv[4];
 
-	const char* INPUT_OBJ = "obj/african_head.obj";
-	const char* INPUT_TEX = "obj/african_head_diffuse.bmp";
-	const size_t WIDTH = 800, HEIGHT = 800, DEPTH = 255;
+	// --- read json config ---
+	std::ifstream config("config.json");
+	if (!config.is_open()) {
+		std::cerr << "Could not open config.json file." << std::endl;
+		return 1;
+	}
 
-	const Vec3f      eye( 1,  1,  3);
-	const Vec3f   center( 0,  0,  0);
-	const Vec3f vertical( 0,  1,  0);
-	const Vec3f    light( 1,  1,  1);
+	nlohmann::json jsonConfig;
+	try {
+		config >> jsonConfig;
+	} catch (const nlohmann::json::parse_error& e) {
+		std::cerr << "Error parsing JSON: " << e.what() << std::endl;
+		return 1;
+	}
 
-	Model* model = new Model(INPUT_OBJ);
-	Texture* texture = new Texture(INPUT_TEX);
+	if (!jsonConfig.contains("model_path") || !jsonConfig.contains("texture_path") ||
+		!jsonConfig.contains("output_width") || !jsonConfig.contains("output_height") ||
+		!jsonConfig.contains("output_depth") || !jsonConfig.contains("eye") ||
+		!jsonConfig.contains("center") || !jsonConfig.contains("vertical") ||
+		!jsonConfig.contains("light")) {
+		std::cerr << "Missing required fields in config.json." << std::endl;
+		return 1;
+	}
+
+	std::string INPUT_OBJ = jsonConfig["model_path"].get<std::string>();
+	std::string INPUT_TEX = jsonConfig["texture_path"].get<std::string>();
+	
+	const size_t WIDTH  = jsonConfig["output_width"].get<size_t>();
+	const size_t HEIGHT = jsonConfig["output_height"].get<size_t>();
+	const size_t DEPTH  = jsonConfig["output_depth"].get<size_t>();
+
+	auto eye_array      = jsonConfig["eye"].get<std::vector<float>>();
+	auto center_array   = jsonConfig["center"].get<std::vector<float>>();
+	auto vertical_array = jsonConfig["vertical"].get<std::vector<float>>();
+	auto light_array    = jsonConfig["light"].get<std::vector<float>>();
+
+	if (eye_array.size() != 3 || center_array.size() != 3 || 
+		vertical_array.size() != 3 || light_array.size() != 3) {
+		std::cerr << "Eye, center, vertical, and light must be arrays of three floats." << std::endl;
+		return 1;
+	}
+	// --- done reading config ---
+
+	const Vec3f eye(eye_array);
+	const Vec3f center(center_array);
+	const Vec3f vertical(vertical_array);
+	const Vec3f light(light_array);
+
+	Model* model = new Model(INPUT_OBJ.c_str());
+	Texture* texture = new Texture(INPUT_TEX.c_str());
 	Canvas* canvas = new Canvas(WIDTH, HEIGHT, DEPTH);
 	Geometrics* transform = new Geometrics(eye, center, vertical, light);
 

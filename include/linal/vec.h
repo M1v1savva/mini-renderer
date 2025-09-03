@@ -2,6 +2,7 @@
 
 #include <cmath>
 #include <stdexcept>
+#include <vector>
 
 template<typename T> struct Vec2 {
 	union { struct { T x, y; }; T val[2]; };
@@ -12,6 +13,7 @@ template<typename T> struct Vec2 {
 	template<typename K> 
 	Vec2(const Vec2<K> &v);
 	
+	Vec2(const std::vector<T> &v) : x(v[0]), y(v[1]) {}
 	Vec2(T _val[]) : x(_val[0]), y(_val[1]) {} 
 	Vec2(T _x, T _y) : x(_x), y(_y) {}
 
@@ -43,6 +45,7 @@ template<typename T> struct Vec3 {
 	template<typename K> 
 	Vec3(const Vec3<K> &v);
 
+	Vec3(const std::vector<T> &v) : x(v[0]), y(v[1]), z(v[2]) {}
 	Vec3(T _val[]) : x(_val[0]), y(_val[1]), z(_val[2]) {} 
 	Vec3(T _x, T _y, T _z) : x(_x), y(_y), z(_z) {}
 
