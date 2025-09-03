@@ -73,15 +73,14 @@ mkdir build && cd build
 cmake ..
 cd ..
 cmake --build build
-./mini-renderer
+./mini-renderer --mode <RAST_MODE> --path <OUTPUT_IMAGE>
 ```
-
-### Docker
+<!-- ### Docker
 ```
 git clone https://github.com/M1v1savva/mini-renderer.git
 docker build -t mini-renderer .
-docker run -rm mini-renderer
-```
+docker run -rm mini-renderer --mode <RAST_MODE> --path <OUTPUT_IMAGE>
+``` -->
 
 ## ▶️ Run
 
@@ -130,10 +129,10 @@ After the build, you can set up `config.json`. The fields for adjastment are: `e
 After the build, test binaries will be in the root folder:
 
 ```
-test_vec
-test_matrix
-test_model
-test_graphics
+./test_vec
+./test_matrix
+./test_model
+./test_graphics
 ```
 
 ```test_copy_image.bmp``` and ```test_graphics_output.bmp``` are also created for debug purposes. 
