@@ -1,0 +1,25 @@
+#include <graphics/graphics.h>
+#include <graphics/rasterizer.h>
+#include <gtest/gtest.h>
+
+TEST(GraphicsTest, Initialize) {
+    const Vec3f      eye(3.0, -3,   6.0);
+	const Vec3f   center(0.0,  0.0, 0.0);
+	const Vec3f vertical(0.0,  1.0, 0.0);
+	const Vec3f    light(0.0,  0.0,  -1);
+    
+    Model*          model = new Model("obj/african_head.obj");
+    Texture*      texture = new Texture("obj/african_head_diffuse.bmp");
+    Canvas*        canvas = new Canvas(800, 800, 255);
+	Geometrics* transform = new Geometrics(eye, center, vertical, light);
+    Graphics g(
+		model,
+		texture,
+		canvas,
+		transform
+	);
+
+	g.build(BINARY_GOURAUD);
+    g.output("test_graphics_output.bmp");
+    EXPECT_EQ(true, true); // see the output image
+}

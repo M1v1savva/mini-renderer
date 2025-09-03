@@ -26,7 +26,7 @@ TEST(RGBTest, ConstructorAndMultiply) {
 
 TEST(ImageTest, BMPCopyIntegrity) {
     const char* EXAMPLE_IMAGE = "obj/african_head_diffuse.bmp";
-    const char* EXAMPLE_IMAGE_COPY = "obj/african_head_diffuse_copy.bmp";
+    const char* EXAMPLE_IMAGE_COPY = "test_copy_image.bmp";
     Image img;
     img.load_bmp(EXAMPLE_IMAGE);
     img.save_bmp(EXAMPLE_IMAGE_COPY);

@@ -4,16 +4,17 @@
 #include <iostream>
 #include <limits>
 #include <cmath>
+#include <chrono>
 
 void Graphics::build(RASTERIZER_MODE rasterizer_mode) {
     transform-> build(canvas-> get_width(), canvas-> get_height(), canvas-> get_depth());
-
     std::unique_ptr<IRasterizer> rasterizer = RasterizerFactory::create(rasterizer_mode);
     rasterizer-> set_canvas(canvas);
-
+    
+    auto start = std::chrono::high_resolution_clock::now();
     for (int i = 0; i < model-> nfaces(); i++) {
         if (i % 5 == 0)
-            std::cout << "\rProgress: " << int(ceil((i * 100.f) / model-> nfaces())) << "%. " << std::flush;
+            std::cout << "\rProgress: " << int(ceil((i * 100.f) / model-> nfaces())) << "%. ";
         Vec3i face = model-> get_face(i);
         Vec3i screen[3];
         Vec3f world[3];
@@ -42,12 +43,16 @@ void Graphics::build(RASTERIZER_MODE rasterizer_mode) {
         }
         Vec3f normal = ((world[2] - world[0]) ^ (world[1] - world[0]));
         normal.normalize();
-        //normal = normal * (-1);
+        normal = normal;
         float intensity = normal * new_light;
         Fragment job { screen, tex, &intensity, vertIntensity, norm, &new_light, texture };
         rasterizer-> set_job(&job);
         rasterizer-> rasterize();
     }
+    auto stop = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+    std::cout << std::endl << "Rendering completed in " << duration.count() << " ms." << std::endl;
+    model-> describe();
 }
 
 void Graphics::output(const char* filename) {

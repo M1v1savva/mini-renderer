@@ -17,7 +17,7 @@ enum RASTERIZER_MODE {
 
 class IRasterizer {
 public:
-	virtual ~IRasterizer() {}
+	virtual ~IRasterizer() {}  
 	virtual void rasterize() = 0;
 
 	void set_job(Fragment* _job) { job = _job; }
@@ -34,35 +34,35 @@ public:
 
 class FillRasterizer : public IRasterizer {
 public:
-	virtual void rasterize() override;
+	void rasterize() override;
 };
 
 class BinRasterizer : public IRasterizer {
 public:
-	virtual void rasterize() override;
+	void rasterize() override;
 };
 
 class BinGuRasterizer : public IRasterizer {
 public:
-	virtual void rasterize() override;
+	void rasterize() override;
 };
 
 class BinPhRasterizer : public IRasterizer {
 public:
-	virtual void rasterize() override;
+	void rasterize() override;
 };
 
 class TexRasterizer : public IRasterizer {
 public:
-	virtual void rasterize() override;
+	void rasterize() override;
 };
 
 class TexGuRasterizer : public IRasterizer {
 public:
-	virtual void rasterize() override;
+	void rasterize() override;
 };
 
 class TexPhRasterizer : public IRasterizer {
 public:
-	virtual void rasterize() override;
+	void rasterize() override;
 };

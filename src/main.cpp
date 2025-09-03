@@ -32,6 +32,7 @@ RASTERIZER_MODE parse_mode(const char* mode_str) {
 void usage(int argc, char** argv) {
 	if (argc != 5 || strcmp(argv[1], "--mode") != 0 || strcmp(argv[3], "--path") != 0) {
         std::cerr << "Usage: " << argv[0] << " --mode <RASTERIZER_MODE> --path <OUTPUT_PATH>\n";
+		std::cerr << "Modify config.json to adjust the scene or input model\n";
 		std::cerr << "RASTERIZER_MODES:\n";
 		std::cerr << "  fill - for debug\n";
 		std::cerr << "  bin  - black & white, lighting \n";
@@ -98,9 +99,9 @@ int main(int argc, char** argv) {
 	const Vec3f vertical(vertical_array);
 	const Vec3f light(light_array);
 
-	Model* model = new Model(INPUT_OBJ.c_str());
-	Texture* texture = new Texture(INPUT_TEX.c_str());
-	Canvas* canvas = new Canvas(WIDTH, HEIGHT, DEPTH);
+	Model*          model = new Model(INPUT_OBJ.c_str());
+	Texture*      texture = new Texture(INPUT_TEX.c_str());
+	Canvas*        canvas = new Canvas(WIDTH, HEIGHT, DEPTH);
 	Geometrics* transform = new Geometrics(eye, center, vertical, light);
 
 	Graphics g(

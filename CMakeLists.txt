@@ -86,4 +86,26 @@ add_my_tests(test_matrix tests/linal/test_matrix.cpp)
 add_my_tests(test_model tests/test_model.cpp)
 
 # graphics
-# add_my_tests(test_graphics tests/test_graphics.cpp)
+add_executable(
+  test_graphics 
+  src/graphics.cpp 
+  src/geometrics.cpp 
+  src/rasterizer_factory.cpp 
+  src/model.cpp
+  tests/test_graphics.cpp
+  src/rasterizers/fill.cpp
+  src/rasterizers/binary.cpp
+  src/rasterizers/binary_gouraud.cpp
+  src/rasterizers/binary_phong.cpp
+  src/rasterizers/texture.cpp
+  src/rasterizers/texture_gouraud.cpp
+  src/rasterizers/texture_phong.cpp
+)
+target_include_directories(test_graphics PRIVATE 
+    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/tests
+    ${CMAKE_SOURCE_DIR}
+)
+target_link_libraries(test_graphics PRIVATE GTest::gtest GTest::gtest_main)
+add_test(NAME test_graphics COMMAND test_graphics)
+set_tests_properties(test_graphics PROPERTIES WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/tests)
