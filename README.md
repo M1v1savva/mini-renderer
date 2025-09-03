@@ -4,7 +4,7 @@ A minimalist 3D renderer implemented in C++ with **~~almost~~ zero external depe
 
 This renderer does not require any external graphics dependencies for 3D such as OpenGL. It implements its own rasterization, matrix transformations in 3D and shading techniques.
 
-Dependencies used (now): **json, gtest**
+Dependencies used (for now): **json, gtest**
 
 Key topics: **rasterization, geometry, linear algebra**.
 
