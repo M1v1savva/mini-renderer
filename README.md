@@ -1,4 +1,4 @@
-# mini-renderer 🎨 Tiny OpenGL from Scratch
+# 3D mini-renderer 🎨 Tiny OpenGL from Scratch
 
 A minimalist 3D renderer implemented in C++ with **~~almost~~ zero external dependencies**, running entirely on the CPU. 
 
