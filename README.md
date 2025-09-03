@@ -18,16 +18,18 @@ Given two files:
 
 The renderer managed to produce images like this:
 
-<div style="display: flex; justify-content: center; gap: 10px;">
-  <figure>
-    <img src="https://user-images.githubusercontent.com/18361541/176958840-88824e83-50db-422e-99c9-c3ed93a92aae.png" width="300"/>
-    <figcaption>Gouraud shading (no texture) </figcaption>
-  </figure>
-  <figure>
-    <img src="https://user-images.githubusercontent.com/18361541/176958850-28f0d030-ef70-47a9-8d0f-6315c3b9210d.png" width="300"/>
-    <figcaption>Phone shading (with texture) </figcaption>
-  </figure>
-</div>
+<table>
+<tr>
+  <td style="text-align: center;">
+    <img src="https://user-images.githubusercontent.com/18361541/176958840-88824e83-50db-422e-99c9-c3ed93a92aae.png" width="400"/><br>
+    Gouraud shading (no texture)
+  </td>
+  <td style="text-align: center;">
+    <img src="https://user-images.githubusercontent.com/18361541/176958850-28f0d030-ef70-47a9-8d0f-6315c3b9210d.png" width="400"/><br>
+    Phong shading (with texture)
+  </td>
+</tr>
+</table>
 
 ## 🚀 Features
 
@@ -44,17 +46,18 @@ While TinyRenderer prioritizes minimal code, **mini-renderer** uses a more objec
 
 ## Examples
 
-
-<div style="display: flex; justify-content: center; gap: 10px;">
-  <figure>
-    <img src="https://user-images.githubusercontent.com/18361541/176958840-88824e83-50db-422e-99c9-c3ed93a92aae.png" width="300"/>
-    <figcaption>Gouraud shading (no texture) </figcaption>
-  </figure>
-  <figure>
-    <img src="https://user-images.githubusercontent.com/18361541/176958850-28f0d030-ef70-47a9-8d0f-6315c3b9210d.png" width="300"/>
-    <figcaption>Phone shading (with texture) </figcaption>
-  </figure>
-</div>
+<table>
+<tr>
+  <td style="text-align: center;">
+    <img src="https://user-images.githubusercontent.com/18361541/176958840-88824e83-50db-422e-99c9-c3ed93a92aae.png" width="400"/><br>
+    Gouraud shading (no texture)
+  </td>
+  <td style="text-align: center;">
+    <img src="https://user-images.githubusercontent.com/18361541/176958850-28f0d030-ef70-47a9-8d0f-6315c3b9210d.png" width="400"/><br>
+    Phong shading (with texture)
+  </td>
+</tr>
+</table>
 
 ## 🛠️ Build & Run
 
