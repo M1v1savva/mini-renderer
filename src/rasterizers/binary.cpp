@@ -3,7 +3,9 @@
 
 void BinRasterizer::rasterize() {
     Vec3i* verts = job-> screen;
-    RGB color(0, 255, 0);
+    float* intensity = job-> intensity;
+    RGB color(255, 255, 255);
+    color = color * (*intensity);
     
     Vec3i v0(verts[0].x, verts[0].y, verts[0].z);
     Vec3i v1(verts[1].x, verts[1].y, verts[1].z);
