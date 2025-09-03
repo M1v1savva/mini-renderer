@@ -17,6 +17,7 @@ public:
     void build(size_t width, size_t height, size_t depth);
     Vec3f pass(Vec3f world);
     Vec3f get_light() { return light; }
+    Vec3f get_transformed_light() { return m2v(view * v2m(light)); }
 private:
     Vec3f eye, center, vertical, light;
     Matrix<float, 4, 4> viewport, projection, view;

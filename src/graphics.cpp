@@ -23,6 +23,7 @@ void Graphics::build(RASTERIZER_MODE rasterizer_mode) {
         Vec3f tex[3];
         Vec3i faceTex = model-> get_face_tex(i);
         float vertIntensity[3];
+        Vec3f new_light = transform-> get_transformed_light();
 
         for (int j = 0; j < 3; j++) {
             Vec3f local = model-> get_vert(face.val[j]);
@@ -35,17 +36,15 @@ void Graphics::build(RASTERIZER_MODE rasterizer_mode) {
 
             norm[j].normalize();
             norm[j] = norm[j] * (-1);
-            vertIntensity[j] = norm[j] * (transform-> get_light());
+            vertIntensity[j] = norm[j] * new_light;
 
             screen[j] = transform-> pass(world[j]);
         }
-        Vec3f normal = ((world[1] - world[0]) ^ (world[2] - world[0]));
+        Vec3f normal = ((world[2] - world[0]) ^ (world[1] - world[0]));
         normal.normalize();
-        normal = normal * (-1);
-        float intensity = normal * (transform-> get_light());
-        
-        Vec3f light = transform-> get_light();
-        Fragment job { screen, tex, &intensity, vertIntensity, norm, &light, texture };
+        //normal = normal * (-1);
+        float intensity = normal * new_light;
+        Fragment job { screen, tex, &intensity, vertIntensity, norm, &new_light, texture };
         rasterizer-> set_job(&job);
         rasterizer-> rasterize();
     }
