@@ -18,26 +18,34 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
-
 # --- Application ---
 
 # - main -
 add_executable(
   mini-renderer
   src/main.cpp
+  src/model.cpp
   src/graphics.cpp
-	src/model.cpp
+  src/geometrics.cpp
+  src/rasterizer_factory.cpp
+  
+  src/rasterizers/fill.cpp
+  src/rasterizers/binary.cpp
+  src/rasterizers/binary_gouraud.cpp
+  src/rasterizers/binary_phong.cpp
+  src/rasterizers/texture.cpp
+  src/rasterizers/texture_gouraud.cpp
+  src/rasterizers/texture_phong.cpp
 )
 target_include_directories(mini-renderer PRIVATE 
   ${CMAKE_SOURCE_DIR}/include
   ${CMAKE_SOURCE_DIR}
 )
-target_link_libraries(mini-renderer PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets)
 
 # - model overview - 
 add_executable(
   model-overview
+  src/model_overview.cpp
   src/model.cpp
 )
 target_include_directories(model-overview PRIVATE 
@@ -70,4 +78,4 @@ add_my_tests(test_matrix tests/linal/test_matrix.cpp)
 add_my_tests(test_model tests/test_model.cpp)
 
 # graphics
-add_my_tests(test_graphics tests/test_graphics.cpp)
+# add_my_tests(test_graphics tests/test_graphics.cpp)

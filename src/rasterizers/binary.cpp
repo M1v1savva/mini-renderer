@@ -2,7 +2,7 @@
 #include <linal/vec.h>
 
 void BinRasterizer::rasterize() {
-    Vec3i verts[3] = &(view-> screen);
+    Vec3i* verts = job-> screen;
     RGB color(0, 255, 0);
     
     Vec3i v0(verts[0].x, verts[0].y, verts[0].z);
@@ -15,11 +15,11 @@ void BinRasterizer::rasterize() {
         return;
 
     if (v0.y > v1.y)
-        swap(v0, v1);
+        std::swap(v0, v1);
     if (v0.y > v2.y)
-        swap(v0, v2);
+        std::swap(v0, v2);
     if (v1.y > v2.y)
-        swap(v1, v2);
+        std::swap(v1, v2);
 
     canvas-> update(v2.x, v2.y, v2.z, color);
 
@@ -42,7 +42,7 @@ void BinRasterizer::rasterize() {
             b = v1 + Vec3f(v2 - v1) * beta;
 
         if (a.x > b.x) 
-            swap(a, b);
+            std::swap(a, b);
 
         canvas-> update(a.x, a.y, a.z, color);
         canvas-> update(b.x, b.y, b.z, color);

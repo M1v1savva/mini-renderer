@@ -1,7 +1,7 @@
 #pragma once
 
-#include <graphics/icanvas.h>
-#include <graphics/iviewport.h>
+#include <graphics/canvas.h>
+#include <graphics/fragment.h>
 
 #include <memory>
 
@@ -15,54 +15,54 @@ enum RASTERIZER_MODE {
 	TEXTURE_PHONG
 };
 
+class IRasterizer {
+public:
+	virtual ~IRasterizer() {}
+	virtual void rasterize() = 0;
+
+	void set_job(Fragment* _job) { job = _job; }
+	void set_canvas(Canvas* _canvas) { canvas = _canvas; }	
+protected:
+	Fragment* job = nullptr;
+	Canvas* canvas = nullptr;
+};
+
 class RasterizerFactory {
 public:
 	static std::unique_ptr<IRasterizer> create(RASTERIZER_MODE mode);
-}
+};
 
-class IRasterizer {
-public:
-	virtual ~IRasterizer() = default;
-	virtual void rasterize() = 0;
-
-	void set_view(IViewport* _view) { view = _view; }
-	void set_canvas(ICanvas* _canvas) { canvas = _canvas; }	
-protected:
-	IViewport* view = nullptr;
-	ICanvas* canvas = nullptr;
-}
-
-class FillRasterizer : IRasterizer {
+class FillRasterizer : public IRasterizer {
 public:
 	virtual void rasterize() override;
-}
+};
 
-class BinRasterizer : IRasterizer {
+class BinRasterizer : public IRasterizer {
 public:
 	virtual void rasterize() override;
-}
+};
 
-class BinGuRasterizer : IRasterizer {
+class BinGuRasterizer : public IRasterizer {
 public:
 	virtual void rasterize() override;
-}
+};
 
-class BinPhRasterizer : IRasterizer {
+class BinPhRasterizer : public IRasterizer {
 public:
 	virtual void rasterize() override;
-}
+};
 
-class TexRasterizer : IRasterizer {
+class TexRasterizer : public IRasterizer {
 public:
 	virtual void rasterize() override;
-}
+};
 
-class TexGuRasterizer : IRasterizer {
+class TexGuRasterizer : public IRasterizer {
 public:
 	virtual void rasterize() override;
-}
+};
 
-class TexPhRasterizer : IRasterizer {
+class TexPhRasterizer : public IRasterizer {
 public:
 	virtual void rasterize() override;
-}
+};

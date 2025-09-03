@@ -1,36 +1,28 @@
 #pragma once
 
 #include <model/model.h>
-#include <model/image.h>
-#include <model/rgb.h>
-#include <linal/matrix.h>
-#include <linal/vec.h>
+#include <graphics/texture.h>
 #include <graphics/rasterizer.h>
+#include <graphics/canvas.h>
+#include <graphics/geometrics.h>
+#include <graphics/fragment.h>
 
 class Graphics {
 public:
 	Graphics(
 		Model* _model,
 		Texture* _texture,
-		ICanvas* _canvas,
-		Geometrics* _transform,
-		const char* outputFilename
-	) {
-		model = _model;
-		texture = _texture;
-		canvas = _canvas;
-		transform = _transform;
-		outputFilename = _outputFilename;
-	}
-	~Graphics();
+		Canvas* _canvas,
+		Geometrics* _transform
+	) : model(_model), transform(_transform), canvas(_canvas), texture(_texture) {}
+	~Graphics() {}
 
 	void build(RASTERIZER_MODE type);
-	void output();
+	void output(const char* filename);
+
 private:
 	Model* model;
-	ICanvas* canvas;
-	Geometrics* geometrics;
-	Texture* transform;
-	
-	char *outputFilename;
+	Canvas* canvas;
+	Geometrics* transform;
+	Texture* texture;
 };
