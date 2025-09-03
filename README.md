@@ -25,7 +25,9 @@ cmake --build build
 ```
 **See out.bmp**
 
-## ✨ Results 
+---
+
+### ✨ Results 
 
 Given two files:  
 - `*.obj` (polygonal mesh)  
@@ -46,20 +48,26 @@ The renderer managed to produce images like this:
 </tr>
 </table>
 
-## 🚀 Features
+---
+
+### 🚀 Features
 
 - **Z-buffering**: depth handling for correct rendering order  
 - **Transformations**: camera view, projection, viewport; applied to lights too  
 - **Rasterization**: texture mapping, Gouraud and Phong shading
 - **Modularity**: camera view configured in `config.json`, loaders, mini geometry library, rasterizer factory
 
-## 📚 Reference
+---
+
+### 📚 Reference
 
 This project is my hands-on take on [ssloy's Tinyrenderer](https://github.com/ssloy/tinyrenderer/wiki). The model used to generate examples with the renderer is the model used in the blog with the permission from creator.  
 
 While TinyRenderer prioritizes minimal code, **mini-renderer** uses a more object-oriented design, making it easier to embed in a GUI or extend for other uses. 
 
-## 🚦 Examples
+---
+
+### 🚦 Examples
 
 <table>
 <tr>
@@ -78,7 +86,9 @@ While TinyRenderer prioritizes minimal code, **mini-renderer** uses a more objec
 </tr>
 </table>
 
-## ▶️ Run
+---
+
+### ▶️ Run
 
 Run `./mini-renderer` to see help.
 
@@ -100,7 +110,9 @@ Run `./mini-renderer` to see help.
 ./mini-renderer --mode bing --path out.bmp
 ```
 
-## ⚙️ Config (Optional)
+---
+
+### ⚙️ Config (Optional)
 
 After the build, you can set up `config.json`. The fields for adjastment are: `eye`, `light`. Other fields are left in more so for debugging purposes.
 
@@ -120,7 +132,9 @@ After the build, you can set up `config.json`. The fields for adjastment are: `e
 }
 ```
 
-## ✅ Running Tests
+---
+
+### ✅ Running Tests
 
 After the build, test binaries will be in the root folder:
 
@@ -135,6 +149,8 @@ After the build, test binaries will be in the root folder:
 
 run ```./model-overview --path <PATH_TO_OBJ>``` for description of an obj file.
 
-## 📝 License
+---
+
+### 📝 License
 
 This project is licensed under the MIT License.
