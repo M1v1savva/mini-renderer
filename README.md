@@ -50,7 +50,7 @@ The renderer managed to produce images like this:
 
 ---
 
-### 🚀 Features
+### 🐱 Features
 
 - **Z-buffering**: depth handling for correct rendering order  
 - **Transformations**: camera view, projection, viewport; applied to lights too  
