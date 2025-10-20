@@ -1,14 +1,7 @@
-# 3D mini-renderer 🎨 Tiny OpenGL from Scratch
+# A simple 3D renderer from scratch
 
-A minimalist 3D renderer implemented in C++ with **~~almost~~ zero external dependencies**, running entirely on the CPU. 
-
-This renderer does not require any external graphics dependencies for 3D such as OpenGL. It implements its own rasterization, matrix transformations in 3D and shading techniques.
-
-Dependencies used (for now): **json, gtest**
-
-Key topics: **rasterization, geometry, linear algebra**.
-
----
+A minimalist 3D renderer implemented in C++ with **~~almost~~ zero external dependencies**, running entirely on CPU. 
+It implements its own rasterization, matrix transformations in 3D and shading techniques.
 
 ## 🚀 Quick Start with CMake
 
@@ -21,19 +14,19 @@ mkdir build && cd build
 cmake ..
 cd ..
 cmake --build build
-./mini-renderer --mode bing --path out.bmp
+./mini-renderer --mode bing --path out.tga
 ```
-**See out.bmp**
+**See out.tga**
 
 ---
 
-### ✨ Results 
+### Results 
 
 Given two files:  
 - `*.obj` (polygonal mesh)  
-- `*.bmp` / `*.tga` (texture)  
+- `*.tga` (texture)  
 
-The renderer managed to produce images like this:
+The renderer is producing images like this:
 
 <table>
 <tr>
@@ -50,7 +43,7 @@ The renderer managed to produce images like this:
 
 ---
 
-### 🐱 Features
+### Features
 
 - **Z-buffering**: depth handling for correct rendering order  
 - **Transformations**: camera view, projection, viewport; applied to lights too  
@@ -59,7 +52,7 @@ The renderer managed to produce images like this:
 
 ---
 
-### 📚 Reference
+### Reference
 
 This project is my hands-on take on [ssloy's Tinyrenderer](https://github.com/ssloy/tinyrenderer/wiki). The model used to generate examples with the renderer is the model used in the blog with the permission from creator.  
 
@@ -67,21 +60,67 @@ While TinyRenderer prioritizes minimal code, **mini-renderer** uses a more objec
 
 ---
 
-### 🚦 Examples
+### Examples
 
 <table>
 <tr>
   <td style="text-align: center;">
-    <img src="results/gou1.bmp" width="400"/><br>
-    Gouraud shading (no texture)
+    <img src="examples/1-bin.bmp" width="400"/><br>
   </td>
   <td style="text-align: center;">
-    <img src="results/phong1.bmp" width="400"/><br>
-    Phong shading (no texture)
+    <img src="examples/1-bing.bmp" width="400"/><br>
   </td>
   <td style="text-align: center;">
-    <img src="results/gou2.bmp" width="400"/><br>
-    Gouraud shading (with texture)
+    <img src="examples/1-binp.bmp" width="400"/><br>
+  </td>
+  <td style="text-align: center;">
+    <img src="examples/1-tex.bmp" width="400"/><br>
+  </td>
+  <td style="text-align: center;">
+    <img src="examples/1-texg.bmp" width="400"/><br>
+  </td>
+  <td style="text-align: center;">
+    <img src="examples/1-texp.bmp" width="400"/><br>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: center;">
+    <img src="examples/2-bin.bmp" width="400"/><br>
+  </td>
+  <td style="text-align: center;">
+    <img src="examples/2-bing.bmp" width="400"/><br>
+  </td>
+  <td style="text-align: center;">
+    <img src="examples/2-binp.bmp" width="400"/><br>
+  </td>
+  <td style="text-align: center;">
+    <img src="examples/2-tex.bmp" width="400"/><br>
+  </td>
+  <td style="text-align: center;">
+    <img src="examples/2-texg.bmp" width="400"/><br>
+  </td>
+  <td style="text-align: center;">
+    <img src="examples/2-texp.bmp" width="400"/><br>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: center;">
+    <img src="examples/3-bin.bmp" width="400"/><br>
+  </td>
+  <td style="text-align: center;">
+    <img src="examples/3-bing.bmp" width="400"/><br>
+  </td>
+  <td style="text-align: center;">
+    <img src="examples/3-binp.bmp" width="400"/><br>
+  </td>
+  <td style="text-align: center;">
+    <img src="examples/3-tex.bmp" width="400"/><br>
+  </td>
+  <td style="text-align: center;">
+    <img src="examples/3-texg.bmp" width="400"/><br>
+  </td>
+  <td style="text-align: center;">
+    <img src="examples/3-texp.bmp" width="400"/><br>
   </td>
 </tr>
 </table>
@@ -107,21 +146,17 @@ Run `./mini-renderer` to see help.
 
 #### Example
 ```
-./mini-renderer --mode bing --path out.bmp
+./mini-renderer --mode bing --path out.tga
 ```
 
 ---
 
-### ⚙️ Config (Optional)
-
-After the build, you can set up `config.json`. The fields for adjastment are: `eye`, `light`. Other fields are left in more so for debugging purposes.
-
-`eye` represents the points of camera view, camera is always pointing towards `(0, 0, 0)`. `light` represents a 3D lighting vector.
+You can adjust the scene in `config.json` by tweaking `eye` and `light` vectors. Other fields are left in for debugging.
 
 ```
 {
   "model_path":   "obj/african_head.obj",
-  "texture_path": "obj/african_head_diffuse.bmp",
+  "texture_path": "obj/african_head_diffuse.tga",
   "output_width":  800,
   "output_height": 800,
   "output_depth":  255,
@@ -145,12 +180,12 @@ After the build, test binaries will be in the root folder:
 ./test_graphics
 ```
 
-```test_copy_image.bmp``` and ```test_graphics_output.bmp``` are also created for debug purposes. 
+```test_copy_image.tga``` and ```test_graphics_output.tga``` are also created for debugging purposes. 
 
-run ```./model-overview --path <PATH_TO_OBJ>``` for description of an obj file.
+run ```./model-overview --path <PATH_TO_OBJ>``` to fetch description of an obj file.
 
 ---
 
 ### 📝 License
 
-This project is licensed under the MIT License.
+This project is licensed under the BY-NC-SA 4.0 License.
