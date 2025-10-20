@@ -25,6 +25,7 @@ void Graphics::build(RASTERIZER_MODE rasterizer_mode) {
         Vec3i faceTex = model-> get_face_tex(i);
         float vertIntensity[3];
         Vec3f new_light = transform-> get_transformed_light();
+        new_light.normalize();
 
         for (int j = 0; j < 3; j++) {
             Vec3f local = model-> get_vert(face.val[j]);
@@ -33,17 +34,15 @@ void Graphics::build(RASTERIZER_MODE rasterizer_mode) {
 
             world[j] = local;
             norm[j] = localNorm;
-            tex[j] = localTex;
-
             norm[j].normalize();
-            norm[j] = norm[j] * (-1);
+            
+            tex[j] = localTex;
             vertIntensity[j] = norm[j] * new_light;
 
             screen[j] = transform-> pass(world[j]);
         }
-        Vec3f normal = ((world[2] - world[0]) ^ (world[1] - world[0]));
+        Vec3f normal = ((world[1] - world[0]) ^ (world[2] - world[0]));
         normal.normalize();
-        normal = normal;
         float intensity = normal * new_light;
         Fragment job { screen, tex, &intensity, vertIntensity, norm, &new_light, texture };
         rasterizer-> set_job(&job);
@@ -69,6 +68,6 @@ void Graphics::output(const char* filename) {
             rotated_canvas[i][j] = old_canvas[j][i];
     
     dr.pixelmap = rotated_canvas;
-    dr.save_bmp(filename);
+    dr.save_tga(filename);
     std::cout << "Saved to " << filename << std::endl;
 }
