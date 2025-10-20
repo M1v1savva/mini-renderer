@@ -13,11 +13,12 @@ struct RGB {
 	RGB(unsigned char _r, unsigned char _g, unsigned char _b) 
 		: r(_r), g(_g), b(_b) {}
 
-	inline RGB operator * (float k) const { 
-		auto cast = [](float x) {
-			return static_cast<unsigned char>(x);
+	inline RGB operator * (float k) const {
+		auto sat = [](float x) -> unsigned char {
+			if (x <= 0.0f) return 0;
+			if (x >= 255.0f) return 255;
+			return static_cast<unsigned char>(x + 0.5f);
 		};
-		
-		return RGB(cast(k * r), cast(k * g), cast(k * b));
+		return RGB(sat(k * r), sat(k * g), sat(k * b));
 	}
-};	
+};

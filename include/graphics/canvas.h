@@ -16,7 +16,7 @@ struct Canvas {
         width(_width), height(_height), depth(_depth) {
         
         if (width <= 0 || height <= 0)
-            new std::runtime_error("Graphics canvas width and height must be positive.");
+            throw std::runtime_error("Graphics canvas width and height must be positive.");
         map = new RGB*[width];
         for (size_t i = 0; i < width; i++)
             map[i] = new RGB[height];
@@ -44,15 +44,16 @@ struct Canvas {
     size_t get_depth() const { return depth; }
     RGB** get_pixelmap() const { return map; }
 
-    void update(size_t x, size_t y, int z_bound, const RGB& color) {
+    void update(int x, int y, int z_bound, const RGB& color) {
         if (in_range(x, y) && zbuffer[x][y] < z_bound) {
             zbuffer[x][y] = z_bound;
             draw_pixel(x, y, color);
         } 
     }
 
-    bool in_range(size_t x, size_t y) const { 
-        return (0 <= x && x < width && 0 <= y && y < height); 
+    bool in_range(int x, int y) const {
+        return (0 <= x && x < static_cast<int>(width) 
+             && 0 <= y && y < static_cast<int>(height));   
     }
 
     void draw_pixel(size_t x, size_t y, const RGB& color) {
