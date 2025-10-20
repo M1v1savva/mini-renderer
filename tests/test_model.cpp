@@ -25,12 +25,12 @@ TEST(RGBTest, ConstructorAndMultiply) {
 }
 
 TEST(ImageTest, BMPCopyIntegrity) {
-    const char* EXAMPLE_IMAGE = "obj/african_head_diffuse.bmp";
-    const char* EXAMPLE_IMAGE_COPY = "test_copy_image.bmp";
+    const char* EXAMPLE_IMAGE = "obj/african_head_diffuse.tga";
+    const char* EXAMPLE_IMAGE_COPY = "test_copy_image.tga";
     Image img;
-    img.load_bmp(EXAMPLE_IMAGE);
-    img.save_bmp(EXAMPLE_IMAGE_COPY);
-    std::cerr << "[          ] !!see the copy of the bmp image in obj!!" << std::endl;
+    img.load_tga(EXAMPLE_IMAGE);
+    img.save_tga(EXAMPLE_IMAGE_COPY);
+    std::cerr << "[          ] !!see the copy of the tga image in obj!!" << std::endl;
     EXPECT_EQ(true, true); // see the copy of the image
 }
 

@@ -9,7 +9,7 @@ TEST(GraphicsTest, Initialize) {
 	const Vec3f    light(0.0,  0.0,  -1);
     
     Model*          model = new Model("obj/african_head.obj");
-    Texture*      texture = new Texture("obj/african_head_diffuse.bmp");
+    Texture*      texture = new Texture("obj/african_head_diffuse.tga");
     Canvas*        canvas = new Canvas(800, 800, 255);
 	Geometrics* transform = new Geometrics(eye, center, vertical, light);
     Graphics g(
@@ -20,6 +20,6 @@ TEST(GraphicsTest, Initialize) {
 	);
 
 	g.build(BINARY_GOURAUD);
-    g.output("test_graphics_output.bmp");
+    g.output("test_graphics_output.tga");
     EXPECT_EQ(true, true); // see the output image
 }
