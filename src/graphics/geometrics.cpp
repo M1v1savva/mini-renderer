@@ -1,6 +1,9 @@
 #include <graphics/geometrics.h>
 #include <iostream>
 
+Geometrics::Geometrics(Vec3f _eye, Vec3f _center, Vec3f _vertical, Vec3f _light)
+    : eye(_eye), center(_center), vertical(_vertical), light(_light) {}
+
 void Geometrics::build(size_t width, size_t height, size_t depth) {
     viewport = build_viewport(width, height, depth);
     projection = build_projection();

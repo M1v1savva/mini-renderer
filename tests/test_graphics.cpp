@@ -3,10 +3,10 @@
 #include <gtest/gtest.h>
 
 TEST(GraphicsTest, Initialize) {
-    const Vec3f      eye(3.0, -3,   6.0);
-	const Vec3f   center(0.0,  0.0, 0.0);
-	const Vec3f vertical(0.0,  1.0, 0.0);
-	const Vec3f    light(0.0,  0.0,  -1);
+    const Vec3f      eye(1.0, 0.5, 6.0);
+	const Vec3f   center(0.0, 0.0, 0.0);
+	const Vec3f vertical(0.0, 1.0, 0.0);
+	const Vec3f    light(0.0, 0.0, 1.0);
     
     Model*          model = new Model("obj/african_head.obj");
     Texture*      texture = new Texture("obj/african_head_diffuse.tga");

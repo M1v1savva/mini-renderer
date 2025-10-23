@@ -6,6 +6,9 @@
 #include <cmath>
 #include <chrono>
 
+Graphics::Graphics(Model* _model, Texture* _texture, Canvas* _canvas, Geometrics* _transform)
+    : model(_model), texture(_texture), canvas(_canvas), transform(_transform) {}
+
 void Graphics::build(RASTERIZER_MODE rasterizer_mode) {
     transform-> build(canvas-> get_width(), canvas-> get_height(), canvas-> get_depth());
     std::unique_ptr<IRasterizer> rasterizer = RasterizerFactory::create(rasterizer_mode);

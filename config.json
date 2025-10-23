@@ -1,6 +1,6 @@
 {
-  "model_path": "obj/african_head.obj",
-  "texture_path": "obj/african_head_diffuse.tga",
+  "model_path": "../obj/african_head.obj",
+  "texture_path": "../obj/african_head_diffuse.tga",
   "output_width": 800,
   "output_height": 800,
   "output_depth": 255,

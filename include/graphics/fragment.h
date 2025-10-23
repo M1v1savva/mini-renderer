@@ -1,6 +1,6 @@
 #pragma once
 
-#include <graphics/texture.h>
+#include <model/texture.h>
 #include <linal/vec.h>
 
 struct Fragment {

@@ -5,14 +5,8 @@
 
 class Geometrics {
 public:
-    Geometrics(Vec3f _eye, Vec3f _center, Vec3f _vertical, Vec3f _light) 
-    :
-    eye(_eye),
-    center(_center),
-    vertical(_vertical),
-    light(_light)   
-    {}
-    ~Geometrics() {}
+    Geometrics(Vec3f _eye, Vec3f _center, Vec3f _vertical, Vec3f _light);
+    ~Geometrics() = default;
 
     void build(size_t width, size_t height, size_t depth);
     Vec3f pass(Vec3f world);
