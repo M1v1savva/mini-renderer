@@ -12,9 +12,9 @@ git clone https://github.com/M1v1savva/mini-renderer.git
 cd mini-renderer
 mkdir build && cd build
 cmake ..
-cd ..
-cmake --build build
-./mini-renderer --mode bing --path out.tga
+make
+cd ../output/
+./mini-renderer --mode texp --path out.tga --config ../config.json
 ```
 **See out.tga**
 
@@ -132,9 +132,11 @@ While TinyRenderer prioritizes minimal code, **mini-renderer** uses a more objec
 Run `./mini-renderer` to see help.
 
 #### Flags
-
-- `--mode` : RASTERIZER_MODE  
-- `--path` : path to the output bmp    
+Required:<br/>
+- `--mode`   : RASTERIZER_MODE  
+- `--path`   : path to the output bmp    
+Optional:<br/>
+- `--config` : path to the config json 
 
 **RASTERIZER_MODE options:**
 
@@ -146,7 +148,7 @@ Run `./mini-renderer` to see help.
 
 #### Example
 ```
-./mini-renderer --mode bing --path out.tga
+./mini-renderer --mode bing --path out.tga --config ../config.json
 ```
 
 ---
@@ -155,8 +157,8 @@ You can adjust the scene in `config.json` by tweaking `eye` and `light` vectors.
 
 ```
 {
-  "model_path":   "obj/african_head.obj",
-  "texture_path": "obj/african_head_diffuse.tga",
+  "model_path":   "../obj/african_head.obj",
+  "texture_path": "../obj/african_head_diffuse.tga",
   "output_width":  800,
   "output_height": 800,
   "output_depth":  255,
@@ -171,7 +173,9 @@ You can adjust the scene in `config.json` by tweaking `eye` and `light` vectors.
 
 ### ✅ Running Tests
 
-After the build, test binaries will be in the root folder:
+Run `ctest` from `build/` folder to run all tests.
+
+After the build, test binaries will be in the `output/` folder:
 
 ```
 ./test_vec
@@ -179,11 +183,6 @@ After the build, test binaries will be in the root folder:
 ./test_model
 ./test_graphics
 ```
-
-```test_copy_image.tga``` and ```test_graphics_output.tga``` are also created for debugging purposes. 
-
-run ```./model-overview --path <PATH_TO_OBJ>``` to fetch description of an obj file.
-
 ---
 
 ### 📝 License
