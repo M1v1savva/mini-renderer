@@ -26,7 +26,7 @@ TEST(RGBTest, ConstructorAndMultiply) {
 
 TEST(ImageTest, BMPCopyIntegrity) {
     const char* EXAMPLE_IMAGE = "obj/african_head_diffuse.tga";
-    const char* EXAMPLE_IMAGE_COPY = "test_copy_image.tga";
+    const char* EXAMPLE_IMAGE_COPY = "output/test_copy_image.tga";
     Image img;
     img.load_tga(EXAMPLE_IMAGE);
     img.save_tga(EXAMPLE_IMAGE_COPY);

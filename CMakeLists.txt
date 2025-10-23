@@ -5,9 +5,11 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
-set(TEST_OUTPUT_DIR ${CMAKE_BINARY_DIR})
+file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/output)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/output)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set(TEST_OUTPUT_DIR ${CMAKE_BINARY_DIR}/output)
 
 # --- Dependencies --- 
 include(FetchContent)
@@ -44,10 +46,7 @@ add_executable(
   src/rasterizers/texture_gouraud.cpp
   src/rasterizers/texture_phong.cpp
 )
-target_include_directories(mini-renderer PRIVATE 
-  ${CMAKE_SOURCE_DIR}/include
-  ${CMAKE_SOURCE_DIR}
-)
+target_include_directories(mini-renderer PRIVATE ${CMAKE_SOURCE_DIR}/include)
 target_link_libraries(mini-renderer PRIVATE nlohmann_json::nlohmann_json)
 
 # - model overview - 
@@ -56,10 +55,7 @@ add_executable(
   src/model_overview.cpp
   src/model.cpp
 )
-target_include_directories(model-overview PRIVATE 
-    ${CMAKE_SOURCE_DIR}/include
-    ${CMAKE_SOURCE_DIR}
-)
+target_include_directories(model-overview PRIVATE ${CMAKE_SOURCE_DIR}/include)
 
 # --- Tests ---
 enable_testing()
@@ -69,11 +65,10 @@ function(add_my_tests name sources)
     target_include_directories(${name} PRIVATE 
         ${CMAKE_SOURCE_DIR}/include
         ${CMAKE_SOURCE_DIR}/tests
-        ${CMAKE_SOURCE_DIR}
     )
     target_link_libraries(${name} PRIVATE GTest::gtest GTest::gtest_main)
     add_test(NAME ${name} COMMAND ${name})
-    set_tests_properties(${name} PROPERTIES WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/tests)
+    set_tests_properties(${name} PROPERTIES WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 endfunction()
 
 # vec
@@ -104,8 +99,7 @@ add_executable(
 target_include_directories(test_graphics PRIVATE 
     ${CMAKE_SOURCE_DIR}/include
     ${CMAKE_SOURCE_DIR}/tests
-    ${CMAKE_SOURCE_DIR}
 )
 target_link_libraries(test_graphics PRIVATE GTest::gtest GTest::gtest_main)
 add_test(NAME test_graphics COMMAND test_graphics)
-set_tests_properties(test_graphics PROPERTIES WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/tests)
+set_tests_properties(test_graphics PROPERTIES WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})

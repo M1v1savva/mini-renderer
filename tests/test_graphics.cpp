@@ -20,6 +20,6 @@ TEST(GraphicsTest, Initialize) {
 	);
 
 	g.build(BINARY_GOURAUD);
-    g.output("test_graphics_output.tga");
+    g.output("output/test_graphics_output.tga");
     EXPECT_EQ(true, true); // see the output image
 }

@@ -1,5 +1,5 @@
 #include <linal/vec.h>
-#include <tests/randf.h>
+#include <randf.h>
 
 #include <gtest/gtest.h>
 #include <cmath>

@@ -1,5 +1,5 @@
 #include <linal/matrix.h>
-#include <tests/randf.h>
+#include <randf.h>
 
 #include <gtest/gtest.h>
 #include <cstdlib>
