@@ -1,15 +1,3 @@
 build/
 .vscode/
-
-test_vec
-test_matrix
-test_model
-test_graphics
-
-model-overview
-mini-renderer
-
-test_copy_image.tga
-test_graphics_output.tga
-out.tga
-out.bmp
+output/
